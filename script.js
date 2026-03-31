@@ -16,6 +16,8 @@ const stepCounter = document.getElementById('step-counter');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const progressFill = document.getElementById('progress-fill');
+const copyModal = document.getElementById('copy-modal');
+const closeModal = document.getElementById('close-modal');
 
 /**
  * Initialize the application
@@ -176,9 +178,23 @@ function setupEventListeners() {
 
     // Content area click to advance
     document.querySelector('.content').addEventListener('click', (e) => {
-        // Don't advance if clicking the sidebar or buttons
-        if (e.target.closest('.sidebar') || e.target.closest('.nav-controls')) return;
+        // Don't advance if clicking the sidebar or buttons or modal
+        if (e.target.closest('.sidebar') || e.target.closest('.nav-controls') || e.target.closest('.modal-content')) return;
         nextStep();
+    });
+
+    // Anti-copy Protections
+    const showModal = (e) => {
+        e.preventDefault();
+        copyModal.style.display = 'flex';
+    };
+
+    document.addEventListener('contextmenu', showModal);
+    document.addEventListener('copy', showModal);
+    document.addEventListener('selectstart', showModal);
+
+    closeModal.addEventListener('click', () => {
+        copyModal.style.display = 'none';
     });
 }
 
