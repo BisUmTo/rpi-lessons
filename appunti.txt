@@ -1,0 +1,43 @@
+Raspberry 3-4 ITT
+
+Inserisci SD nel PC
+
+Apri Boot
+Mostra estensioni
+Crea SSH file
+
+
+Estrai SD
+Inserisci SD nel raspberry
+Collega Ethernet
+Alimenta raspberry 
+
+Attendi un minuto circa
+Intanto scarica advanced-ip-scanner.com/it/download 
+Avvia il Advanced IP Scanner
+Seleziona Esegui (Avviare versione portatile)
+Leggi e accetta i termini
+
+Scansiona la rete 
+Individua Raspberry PI e memorizza l’indirizzo IP
+
+Apri terminale (CMD) e esegui il comando
+ssh pi@<indirizzo ip>
+Se chiede di usare una password, scrivi yes
+E inserisci raspberry - la password di default
+
+Per verificare se sei sul tuo raspberry - alla prima della connessione infatti il raspberry non ha ancora il Nome del gruppo -
+Proviamo ad accendere e spegnere il led ad intermittenza:
+
+echo heartbeat | such tee /sys/class/leds/led0/trigger
+echo timer | such tee /sys/class/leds/led0/trigger
+echo none | such tee /sys/class/leds/led0/trigger
+echo mmc0 | such tee /sys/class/leds/led0/trigger
+
+Se rispetta i comandi, siete sul raspberry giusto
+Rinominiamolo quindi con il nome del gruppo
+
+Sudo hostnamectl set-hostaname gruppo3ITT0
+Usa il comando ifconfig
+E compila il modulo Google Form con le tue informazioni
+

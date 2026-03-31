@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi Lessons</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Background elements for visual interest -->
+        <div class="bg-gradient"></div>
+        <div class="bg-blobs">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1>Lessons</h1>
+            </div>
+            <ul id="lesson-list">
+                <!-- Lessons will be populated here -->
+            </ul>
+        </nav>
+
+        <main class="content">
+            <div id="step-container" class="step-card">
+                <header class="step-header">
+                    <h2 id="step-title">Loading...</h2>
+                </header>
+                <div id="step-body" class="markdown-body">
+                    <!-- Step content will be rendered here -->
+                </div>
+                <footer class="step-footer">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <div class="nav-controls">
+                        <button id="prev-btn" class="nav-btn" disabled>Indietro</button>
+                        <span id="step-counter">1 / 1</span>
+                        <button id="next-btn" class="nav-btn">Avanti</button>
+                    </div>
+                </footer>
+            </div>
+        </main>
+
+        <div class="interaction-hint" id="hint">
+            Usa le frecce o clicca per avanzare
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
